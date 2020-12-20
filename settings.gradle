@@ -1,0 +1,4 @@
+include ':jiguang'
+include ':app'
+include ':discussionavatarview'
+rootProject.name = "MyHttp"

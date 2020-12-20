@@ -1,0 +1,67 @@
+目的：通过框架完成同袍主页业务功能的添加
+
+步骤：
+    1. 添加主页网络数据接口请求
+        创建网络请求的接口类
+        interface HomeApi{
+            get getHomeData(url);
+        }
+
+    2. 创建对应的主页的数据bean类
+
+    3. 在HttpManager添加获取网络请求接口对象
+
+    4. 在interfaces中去定义主页需要求的MVP的层的接口
+        interface IHome{
+            interface View extends IBaseView{
+                //定义获取主页接口数据返回的方法
+                void getHomeDataReturn(Bean类 result);
+            }
+
+            interface Persenter extends IBasePersenter<View>{
+                //定义V层调用获取主页数据的接口方法
+                void getHomeData();
+            }
+
+            interface Model extends IBaseModel{
+                //定义一个给P层调用去获取主页数据的接口方法
+                void getHomeData(Callback callback);
+            }
+        }
+
+    5. 创建对应的M层的业务实现
+        class HomeModel extends BaseModel implements 主页M层接口{
+
+            void getHomeData(Callback callback){
+                //通过HttpManager调用对应的网络请求接口
+            }
+
+        }
+
+    6. 创建对应的P层业务实现
+        class HomePersenter extends BasePersenter<IHome.View> implements 主页的P层接口{
+
+            IHome.Model model;
+            //构造函数
+            public HomePersenter(IHome.View view){
+                关联对应的V层接口和m层的接口
+                model = new HomeModel();
+            }
+
+            //p层接口实现的方法
+            void getHomeData(){
+                //通过M层调用对用的网络请求接口
+            }
+
+        }
+
+    7.  创建对应的V层业务实现
+        class HomeActivity extends BaseActivity<HomePersenter> implements 主页的V层接口{
+
+            //创建对应的P层实现类
+            HomePersenter createPersenter(){
+                return new HomePersenter(this);
+            }
+
+        }
+

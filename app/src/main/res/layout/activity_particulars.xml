@@ -1,0 +1,65 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/box"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/myScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingClass">
+
+        <ImageView
+            android:id="@+id/top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="532dp"
+            />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/bind_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+
+                android:id="@+id/buy_price"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#00ff00" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="hhahahahhahhahhhahh\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n
+                              下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n
+                              下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n
+                              下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n下面内容自己脑补\n"
+            android:textSize="30sp" />
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:id="@+id/bing_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

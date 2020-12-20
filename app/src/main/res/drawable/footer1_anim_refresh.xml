@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="2000"
+    android:oneshot="false"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:toDegrees="720">
+
+<!--    <item>-->
+<!--        <rotate-->
+<!--            android:fromDegrees="0.0"-->
+<!--            android:pivotX="50.0%"-->
+<!--            android:pivotY="50.0%"-->
+<!--            android:toDegrees="360.0" />-->
+<!--        <span style="white-space:pre">   </span>    &lt;!&ndash; 其中360.0值越大，转的圈圈越快 &ndash;&gt;-->
+<!--    </item>-->
+
+    <shape
+        android:innerRadiusRatio="3"
+        android:shape="ring"
+        android:thicknessRatio="8"
+        android:useLevel="false">
+
+        <gradient
+            android:centerColor="#ff00ff"
+            android:centerY="0.50"
+            android:endColor="#fff000"
+            android:startColor="#fff"
+            android:type="sweep"
+            android:useLevel="false" />
+    </shape>
+
+</rotate>

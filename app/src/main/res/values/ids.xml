@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="image_desc" type="id" />
+    <item name="tv_zan" type="id" />
+    <item name="tv_comment" type="id" />
+    <item name="tv_name" type="id" />
+    <item name="image_comment" type="id" />
+    <item name="image_desc1" type="id" />
+    <item name="image_desc2" type="id" />
+    <item name="image_desc3" type="id" />
+    <item name="linear1" type="id" />
+    <item name="linear2" type="id" />
+    <item name="image_desc4" type="id" />
+    <item name="image_desc5" type="id" />
+    <item name="image_desc6" type="id" />
+    <item name="linear3" type="id" />
+    <item name="image_desc7" type="id" />
+    <item name="image_desc8" type="id" />
+    <item name="image_desc9" type="id" />
+    <item name="tv_yy" type="id" />
+    <item name="tttt" type="id" />
+    <item name="tv_data" type="id" />
+    <item name="image_grade" type="id" />
+    <item name="tv_number" type="id" />
+    <item name="tv_city" type="id" />
+    <item name="image_city" type="id" />
+    <item name="image_location" type="id" />
+    <item name="ll_location" type="id" />
+    <item name="ll_images" type="id" />
+    <item name="image_icon_people" type="id" />
+    <item name="btn_gz" type="id" />
+    <item name="cons" type="id" />
+    <item name="nv" type="id" />
+    <item name="vp_images" type="id" />
+    <item name="btn_return" type="id" />
+    <item name="tv_commends_people" type="id" />
+    <item name="tv_nickName" type="id" />
+    <item name="btn_focus" type="id" />
+    <item name="btn_liao" type="id" />
+    <item name="tv_nike_name" type="id" />
+</resources>

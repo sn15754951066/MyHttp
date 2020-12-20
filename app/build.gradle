@@ -1,0 +1,148 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.umeng.soexample"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+//极光配置
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY  : "c226725aeac8661731719993",//值来自开发者平台取得的AppKey
+                JPUSH_CHANNEL : "default_developer",
+
+                //xiaomi_config_start
+                XIAOMI_APPID  : "MI-小米的APPID",
+                XIAOMI_APPKEY : "MI-小米的APPKEY",
+                //xiaomi_config_end
+                //oppo_config_start
+                OPPO_APPKEY   : "OP-oppo的APPKEY",
+                OPPO_APPID    : "OP-oppo的APPID",
+                OPPO_APPSECRET: "OP-oppo的APPSECRET",
+                //oppo_config_end
+                //vivo_config_start
+                VIVO_APPKEY   : "vivo的APPKEY",
+                VIVO_APPID    : "vivo的APPID",
+                //vivo_config_end
+        ]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'lib'
+            dirs 'libs'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //ndkVersion '22.0.6917172 rc1'
+    //use legacy for android > 6.0
+    useLibrary 'org.apache.http.legacy'
+
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: "lib", include: ["*.jar","*.aar"])
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation project(path: ':jiguang')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+    implementation 'com.prolificinteractive:material-calendarview:1.4.3'
+    implementation 'com.github.kinkoi:materialsearchview:1.4.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.7'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //um
+    implementation "com.umeng.umsdk:common:9.1.0"
+    implementation "com.umeng.umsdk:asms:1.1.3" // asms包依赖(必选)
+    implementation "com.umeng.umsdk:crash:0.0.4" // native crash包依赖(必选)
+
+    implementation 'com.umeng.umsdk:share-core:7.0.2'
+    implementation 'com.umeng.umsdk:share-board:7.0.2'
+    implementation 'com.umeng.umsdk:share-wx:7.0.2'
+    //三方分享平台 其他不包括的需要jar包实现
+    /*implementation  'com.umeng.umsdk:share-qq:7.0.2'
+
+    implementation  'com.umeng.umsdk:share-sina:7.0.2'
+    implementation  'com.umeng.umsdk:share-alipay:7.0.2'
+    implementation  'com.umeng.umsdk:share-dingding:7.0.2'
+
+*/
+
+    //banner
+    implementation 'com.youth.banner:banner:1.4.9'
+    //读取网络图片的依赖
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+
+    implementation 'com.jaeger.ninegridimageview:library:1.0.2'
+
+    //刷新，加载更多依赖
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+
+    implementation 'com.github.hnsycsxhzcsh:DiscussionAvatarView:v1.3'
+
+    //吸顶toolbar依赖
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:x.+'
+
+    //环信
+    // Google firebase cloud messaging
+    implementation 'com.google.android.gms:play-services-base:11.4.0'
+    implementation 'com.google.firebase:firebase-messaging:11.4.0'
+    api 'com.hyphenate:hyphenate-sdk:3.6.8'
+
+    //本地相机相册选择图片
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.3'
+
+    //oss
+    implementation 'com.aliyun.dpa:oss-android-sdk:+'
+
+
+
+}
